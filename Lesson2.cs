@@ -2,11 +2,11 @@ namespace ConsoleApp1;
 
 public class Lesson2
 {
-    /*
-        Ввести с консоли N чисел.
-        Вывести сумму, максимальное, минимальное значения, 
-        количество четных чисел, произведение нечетных чисел.
-    */
+    /// <summary>
+    /// Ввести с консоли N чисел.
+    /// Вывести сумму, максимальное, минимальное значения,
+    /// количество четных чисел, произведение нечетных чисел. 
+    /// </summary>
     public static void Task1_CyclesAndConditions()
     {
         Console.WriteLine("Task1: "); 
@@ -20,30 +20,30 @@ public class Lesson2
            numbers[i] = Convert.ToInt32(Console.ReadLine());
        }
        
-       int s = 0, evenCount = 0, oddComposition = 1;
-       int max = numbers[0], min = numbers[0];
+       int numbersSum = 0, evenCount = 0, oddComposition = 1;
+       int numbersMax = numbers[0], numbersMin = numbers[0];
 
        for(int i = 0; i < n; i++)
        {
-           s = s + numbers[i];
+           numbersSum += numbers[i];
     
-           if(numbers[i] > max) max = numbers[i];
-           if(numbers[i] < min) min = numbers[i];
-           if(numbers[i] % 2 == 0) evenCount = evenCount + 1;
-           else oddComposition = oddComposition * numbers[i];
+           if(numbers[i] > numbersMax) numbersMax = numbers[i];
+           if(numbers[i] < numbersMin) numbersMin = numbers[i];
+           if(numbers[i] % 2 == 0) evenCount++;
+           else oddComposition *= numbers[i];
        }
        
-       Console.WriteLine("Sum: " + s + "\n");
-       Console.WriteLine("Max: " + max + "\n");
-       Console.WriteLine("Min: " + min + "\n");
+       Console.WriteLine("Sum: " + numbersSum + "\n");
+       Console.WriteLine("Max: " + numbersMax + "\n");
+       Console.WriteLine("Min: " + numbersMin + "\n");
        Console.WriteLine("Even count: " + evenCount + "\n");
        Console.WriteLine("Odd composition: " + oddComposition + "\n");
     }
 
-    /*
-     * Заполнить с консоли массив из N элементов. Отсортировать.
-     * Вывести результат. N - задается с консоли
-     */
+    /// <summary>
+    /// Заполнить с консоли массив из N элементов. Отсортировать.
+    /// Вывести результат. N - задается с консоли 
+    /// </summary>
     public static void Task2_SortingArray()
     {
         Console.WriteLine("Task2: ");
@@ -62,23 +62,23 @@ public class Lesson2
 
         for (int i = 0; i < n; i++)
         {
-            Console.Write(numbers[i]);
+            Console.Write(string.Join(" ,",numbers[i]));
         }
         Console.WriteLine();
     }
     
-    /*
-     * Заполнить 2 матрицы размерности NxN случайными числами.
-     * Вывести на консоль. Сложить 2 матрицы.
-     * Вывести результат. Класс Random для генерации случаных чисел.
-     */
+    /// <summary>
+    /// Заполнить 1 матрицы размерности NxN случайными числами.
+    /// Вывести на консоль. Сложить 2 матрицы.
+    /// Вывести результат. Класс Random для генерации случаных чисел.
+    /// </summary>
     public static void Task3_Matrix()
     {
         Console.WriteLine("Task3: ");
         int n = 5;
         int[,] matrix1 = new int[n, n];
         int[,] matrix2 = new int[n, n];
-        int[,] sumMatrix1 = new int[n, n];
+        int[,] matricesSum1 = new int[n, n];
         var rand = new Random();
 
         for (int i = 0; i < n; i++)
@@ -115,7 +115,7 @@ public class Lesson2
         {
             for (int j = 0; j < n; j++)
             {
-                sumMatrix1[i, j] = matrix1[i, j] + matrix1[i, j];
+                matricesSum1[i, j] = matrix1[i, j] + matrix1[i, j];
                 Console.Write(matrix2[i, j].ToString() + " ");
             }
             Console.WriteLine();

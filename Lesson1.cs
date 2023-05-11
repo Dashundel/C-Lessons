@@ -1,4 +1,6 @@
-﻿public class Lesson1
+﻿using System.Collections;
+
+public class Lesson1
 {
     public static void Tasks_Lesson1()
     {
@@ -19,6 +21,9 @@
 //Ввести с консоли число. Обнулить последний бит этого числа. Вывести на консоль
         Console.WriteLine("Input number n: ");
         int с = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine((с >> 1) << 1);
+        
+        BitArray bitC = new BitArray(new int[] { с });
+        int m = bitC.Length;
+        Console.WriteLine(с &= ~(1 << m));
     }
 }

@@ -2,11 +2,11 @@ namespace ConsoleApp1;
 
 public class Lesson3
 {
-   /*
-    * Сделать методы для считывания целых чисел, дробных чисел.
-    * Сделать методы для вывода на консоль этих типов данных,
-    * массивов целых и дробных чисел (можно доработать любое ДЗ).
-    */
+    /// <summary>
+   /// Сделать методы для считывания целых чисел, дробных чисел.
+   /// Сделать методы для вывода на консоль этих типов данных,
+   /// массивов целых и дробных чисел (можно доработать любое ДЗ).
+   /// </summary>
    public static void Task1_InOutputMethods()
    {
        int intNum = ReadInt();
@@ -18,11 +18,11 @@ public class Lesson3
        int[] arr1 = new int[5];
        double[] arr2 = new double[5];
        
-       MatrixInt(arr1); 
-       MatrixDouble(arr2);
+       ArrayInt(arr1); 
+       ArrayDouble(arr2);
        
-       PrintMatrixInt(arr1);
-       PrintMatrixDouble(arr2);
+       PrintArrayInt(arr1);
+       PrintArrayDouble(arr2);
    }
 
    public static int ReadInt()
@@ -46,7 +46,7 @@ public class Lesson3
        Console.WriteLine($"x = {x}");
    }
    
-   public static void PrintMatrixInt(int[] arr)
+   public static void PrintArrayInt(int[] arr)
    {
        Console.WriteLine("Input int array: ");
        for (int i = 0; i < arr.Length; i++)
@@ -56,7 +56,7 @@ public class Lesson3
        Console.WriteLine(); 
    }
    
-   public static void PrintMatrixDouble(double[] arr)
+   public static void PrintArrayDouble(double[] arr)
    {
        Console.WriteLine("Input double array: ");
        for (int i = 0; i < arr.Length; i++)
@@ -66,7 +66,7 @@ public class Lesson3
        Console.WriteLine(); 
    }
    
-   public static void MatrixInt(int[] arr)
+   public static void ArrayInt(int[] arr)
    {
        var rnd = new Random();
        for (int i = 0; i < arr.Length; i++)
@@ -75,7 +75,7 @@ public class Lesson3
        }
    }
    
-   public static void MatrixDouble(double[] arr)
+   public static void ArrayDouble(double[] arr)
    {
        var rnd = new Random();
        for (int i = 0; i < arr.Length; i++)
