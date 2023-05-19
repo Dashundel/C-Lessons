@@ -14,7 +14,7 @@ public class Lesson4
         public readonly int _cityCode;
         public readonly string _phoneNumber;
 
-        public int CityCode
+        public int?  CityCode
         {
             get { return _cityCode; }
         }
@@ -34,24 +34,26 @@ public class Lesson4
         {
             string number = PhoneNumber;
             
-            if (CityCode != 0)
+            if (CityCode != null)
             {
                 return "+" + CityCode.ToString() + PhoneNumber;
             }
             else
             {
-                var charsToRemove = new string[] { "-", ",", ".", "(", ")" };
+               /* var charsToRemove = new string[] { "-", ",", ".", "(", ")" };
                 foreach (var i in charsToRemove)
                 {
                     number = number.Replace(i, string.Empty);
-                }
+                }*/
                
-                if (number.Length < 9)
+               var onlyNumbers = new string(number.Where(c => char.IsDigit(c)).ToArray());
+               
+                if (onlyNumbers.Length < 9)
                 {
-                    return "(" + number.Substring(0, 3) + ")" + number.Substring(3);
+                    return number;
                 }
                 else
-                    return number; 
+                    return onlyNumbers; 
             }
         }
     }
