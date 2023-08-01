@@ -12,7 +12,7 @@ public class Client
     public int Id;
     public string? Phone;
     public int OrderSum;
-
+  
     public virtual string Info
     {
         get

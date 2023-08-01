@@ -1,4 +1,4 @@
-﻿namespace HW456;
+using HW456.HW5.Clients;
 
 class MainClass
 {
@@ -13,6 +13,5 @@ class MainClass
         HW7.Task();
         
         Console.ReadLine();
-
     }
 }
