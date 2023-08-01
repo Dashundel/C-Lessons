@@ -1,4 +1,6 @@
-public class Lesson4
+namespace HW456;
+
+public abstract class Lesson4
 {
     /// <summary>
     /// Создать класс “Телефон”, который содержит следующие данные:
@@ -7,7 +9,6 @@ public class Lesson4
     /// если код города отсутствует.
     /// Преобразовать класс “Телефон” на работу со свойствами
     /// </summary>
-    /// 
 
     public class Telephone
     {
@@ -40,13 +41,7 @@ public class Lesson4
             }
             else
             {
-               /* var charsToRemove = new string[] { "-", ",", ".", "(", ")" };
-                foreach (var i in charsToRemove)
-                {
-                    number = number.Replace(i, string.Empty);
-                }*/
-               
-               var onlyNumbers = new string(number.Where(c => char.IsDigit(c)).ToArray());
+                var onlyNumbers = new string(number.Where(c => char.IsDigit(c)).ToArray());
                
                 if (onlyNumbers.Length < 9)
                 {

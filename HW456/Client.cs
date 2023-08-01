@@ -1,3 +1,5 @@
+namespace HW456;
+
 public class Client
 {
     /// <summary>
@@ -7,58 +9,58 @@ public class Client
     /// Реализовать метод, который возвращает отформатированное название и сумму заказа.
     /// </summary>
 
-    public int id;
-    public string phone;
-    public int orderSum;
-
+    public int Id;
+    public string? Phone;
+    public int OrderSum;
+  
     public virtual string Info
     {
         get
         {
-            return id + '\n' + phone + '\n' + orderSum.ToString() + "руб" + '\n'; 
+            return Id + '\n' + Phone + '\n' + OrderSum.ToString() + "руб" + '\n'; 
         }
         
     }
 
-    public static void func()
+    public static void Func()
     {
-        IE ieClient = new IE();
-        LLC llcClient = new LLC();
+        Ie ieClient = new Ie();
+        LlC llCClient = new LlC();
       
-        ieClient.id = 65482631;
-        ieClient.phone = "+7(499)568945";
-        ieClient.orderSum = 512;
-        ieClient.date = DateOnly.FromDateTime(DateTime.Now.AddYears(-30));
-        ieClient.name = "Блабла Бла Бла";
+        ieClient.Id = 65482631;
+        ieClient.Phone = "+7(499)568945";
+        ieClient.OrderSum = 512;
+        ieClient.Date = DateOnly.FromDateTime(DateTime.Now.AddYears(-30));
+        ieClient.Name = "Блабла Бла Бла";
         Console.WriteLine(ieClient.Info);
       
-        llcClient.id = 65482631;
-        llcClient.phone = "+7(499)568945";
-        llcClient.orderSum = 512;
-        llcClient.name = "Ромашка";
-        llcClient.bankAccount = 5555555555556666;
-        Console.WriteLine(llcClient.Info);     
+        llCClient.Id = 65482631;
+        llCClient.Phone = "+7(499)568945";
+        llCClient.OrderSum = 512;
+        llCClient.Name = "Ромашка";
+        llCClient.BankAccount = 5555555555556666;
+        Console.WriteLine(llCClient.Info);     
     }
 }
 
-public class IE: Client
+public class Ie: Client
 {
-    public string name;
-    public DateOnly date;
+    public string? Name;
+    public DateOnly Date;
     
     public override string Info
     {
-        get { return name + '\n' + date.ToString() + '\n' + base.Info; }
+        get { return Name + '\n' + Date.ToString() + '\n' + base.Info; }
     }
 }
     
-public class LLC: Client
+public class LlC: Client
 {
-    public string name;
-    public long bankAccount;
+    public string? Name;
+    public long BankAccount;
     
     public override string Info
     {
-        get { return name + '\n' + bankAccount.ToString() + '\n' + base.Info; }
+        get { return Name + '\n' + BankAccount.ToString() + '\n' + base.Info; }
     }
 }
