@@ -1,24 +1,28 @@
-﻿namespace HW456;
+﻿using HW456.Lesson_10;
+using HW456.Lesson_11;
+using HW456.Lesson_12;
+using HW456.Lesson_13;
+
+namespace HW456;
 
 class MainClass
 {
     static void Main()
     {
-        Lesson4.Telephone ph = new Lesson4.Telephone(0,"555666887");
-        Console.WriteLine(ph.PhoneNumberWithoutCode());
+        Lesson11.TaskLesson11();
+        HW11.Task();
         
-        Func();
-        
-        HW56.Task(); 
-        HW7.Task();
-        
-        Console.ReadLine();
+        Lesson12.Task();
+        HW12.Task();
 
+        Lesson13.Task();
+
+        Console.ReadLine();
     }
     
     public static void Func()
     {
-        IndividualEntrepreneur individualEntrepreneurClient = new IndividualEntrepreneur()
+        var individualEntrepreneurClient = new IndividualEntrepreneur
         {
             Id = 65482631,
             Phone = "+7(499)568945",
@@ -26,9 +30,10 @@ class MainClass
             Date = DateOnly.FromDateTime(DateTime.Now.AddYears(-30)),
             Name = "Блабла Бла Бла",
         };
+        
         Console.WriteLine(individualEntrepreneurClient.Info);
 
-        LimitedLiabilityCompany limitedLiabilityCompanyClient = new LimitedLiabilityCompany()
+        var limitedLiabilityCompanyClient = new LimitedLiabilityCompany
         {
             Id = 65482631,
             Phone = "+7(499)568945",
